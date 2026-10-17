@@ -1,0 +1,42 @@
+# Experiment Plan
+
+## Research question
+How well does a model trained on listings from Global North cities
+predict advertised nightly prices in Global South cities?
+
+## City groups
+North training cities: New York City, London, Paris
+South test cities: São Paulo, Cape Town, Nairobi
+
+## Unit of analysis
+One row represents one listing.
+
+## Prediction target
+Advertised nightly listing price, converted to USD.
+The model will train on log1p of the USD price.
+
+## Primary metric
+Mean absolute error in USD.
+
+## Supporting metrics
+Median absolute percentage error, RMSE, and R-squared.
+
+## Main experiment
+Train and tune using North city listings only.
+Test separately on each South city.
+Do not use South city prices during training or tuning.
+
+## Planned reference model
+Ridge Regression.
+
+## Planned comparisons
+Random Forest and Gradient Boosted Trees.
+
+## Planned corrections
+1. City relative listing features
+2. Importance weighting using target city features only
+3. Small labelled target city calibration samples
+
+## Data handling
+Raw files remain unchanged in Google Drive.
+The GitHub repository contains code, source records, results, and documentation.
